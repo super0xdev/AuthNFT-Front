@@ -68,7 +68,7 @@ const Register = () => {
             'nfts': nftArray,
             'wallet': account.address
         }
-        const res = await axios.post('/api/register', data)
+        const res = await axios.post('http://170.130.55.57:5000/api/register', data)
         if (res.data.message === 'success') {
             toast.success('Registered Successfully', { autoClose: 1000 })
             setTimeout(() => {
