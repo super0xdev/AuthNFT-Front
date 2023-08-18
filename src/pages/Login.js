@@ -42,7 +42,8 @@ const Login = () => {
         data.append('wallet', account.address)
         data.append('qrcode', file)
 
-        const res = await axios.post('http://170.130.55.57:5000/api/login', data)
+        const res = await fetch('/api/login', { method: 'POST', body: data })
+        console.log(res)
         if (res.data.message == 'Success') {
             toast.success('Login Success', { autoClose: 1000 })
             setLoading(false);
