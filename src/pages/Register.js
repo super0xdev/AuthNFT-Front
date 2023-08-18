@@ -56,6 +56,10 @@ const Register = () => {
             toast.warning('Input error', { autoClose: 1000 })
             return
         }
+        if (account.address === undefined) {
+            toast.warning('Please connect wallet to mint an nft', { autoClose: 1000 })
+            return
+        }
         const nftArray = await checkWallet()
         if (nftArray.length === 0) {
             toast.warning('No nfts in your wallet.\nYou need to mint an NFT before register', { autoClose: 1000 })
